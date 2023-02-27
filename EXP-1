@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <img src="https://kongu.ac.in/images/header2021.png"><br>
+        <img src="https://kongu.ac.in/departments/ai/images/header.png" height="200">
+    </head>
+    <body>
+        <style>
+            div {text-align:end;}
+            hr.new2 { border-top: 1px dashed rgba(133, 124, 124, 0.945);}
+
+        </style>
+        <h1 style="color: blueviolet;">Home    AI and Ml   AI and DS   Laboratory  Faculty </h1>
+        <h2><b style="color: darkblue;">Head of the Department</b><br></h2>
+    <h4>Dr.C.S.Kanimozhi selvi (w.e.f 04.05.2022)</h4>
+    <h2><b style="color:darkblue;">Programmes Offered</b></h2>
+    <hr class="new2">
+    <h3><b>Programme</b><div><b>Intake</b></div></h3>
+    <hr class="new2">
+    <h4> 
+        B.Tech Artificial Intelligence and Data Science
+        <div>60 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </h4>
+    <hr class="new2">
+    <h4>
+        B.Tech Artificial Intelligence and Machine Learning
+        <div>60 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </h4>
+    <hr class="new2">
+    </body>
+</html>
