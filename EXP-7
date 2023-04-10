@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:8080" method="get">
+        Enter Radius : <input type="number" name="value1"><br><br>
+        Enter length : <input type="number" name="value2">
+        Enter breadth : <input type="number" name="value3">
+        <button type="submit">AREA</button>
+    </form>
+</body>
+</html>
+
+
+//JS
+
+const http= require('http');
+url= require('url');
+http.createServer((req,res)=>{
+    
+    console.log(req.url);
+    var kar= url.parse(req.url,true).query;
+    console.log(kar);
+    console.log(kar.value1);
+    console.log(kar.value2);
+    console.log(kar.value3);
+    var r = Number(kar.value1);
+    var l = Number(kar.value2);
+    var b = Number(kar.value3);
+    var area1 = (3.14)*r*r;
+    var area2 = l*b;
+    res.write("Area of the circle is :"+area1+"\nArea of the rectangle is :"+area2);
+    res.end();
+    
+}).listen(8080);
