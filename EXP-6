@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Course Registration Form</title>
+        <script>
+            function validateForm() {
+                var name = document.forms["registration"]["name"].value;
+                var email = document.forms["registration"]["email"].value;
+                var mobno = document.forms["registration"]["mobno"].value;
+                var nationality = document.forms["registration"]["nationality"].value;
+                var gender = document.forms["registration"]["gender"].value;
+                var address = document.forms["registration"]["address"].value;
+                var dept = document.forms["registration"]["dept"].value;
+                if (name == "" || email == "" || mobno == ""|| nationality == ""|| gender == ""|| address == ""|| dept == "")
+                {
+                    alert("Please fill out all fields.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <h1  style="text-align: center;"><b><u>Course Registration Form</u></b></h1>
+    <body style="background-color: cornsilk;">
+        <form action="/action.php" name="registration" onsubmit="return validateForm()">
+            <label>Name : </label>
+            <input type="text" placeholder="Applicant Name" id="name"><br><br>
+            <label>Mail id : </label>
+            <input type="email" placeholder="Applicant Email" id="email"><br><br>
+            <label>Mobile Number : </label>
+            <input type="number" placeholder="Applicant Mob no" id="mobno"><br><br>
+            <label>Nationality : </label>
+            <input type="text" placeholder="Applicant Nationality" id="nationality"><br><br>
+            <p>Select your Gender : </p><br>
+            <input type="radio" id="gender">
+            <label>Male</label><br>
+            <input type="radio" id="gender">
+            <label>Female</label><br>
+            <input type="radio" id="gender">
+            <label>Others</label><br><br>
+            <label>Address : <label><br><br>
+            <textarea id="address" rows="5" cols="50"></textarea><br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                  
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+                    <span id="password-error"></span>
+                  <script>
+                    const passwordInput = document.getElementById('password');
+                    const confirmPasswordInput = document.getElementById('confirm-password');
+                    const passwordError = document.getElementById('password-error');
+                  
+                    confirmPasswordInput.addEventListener('input', () => {
+                      if (confirmPasswordInput.value === passwordInput.value) {
+                        passwordError.textContent = '';
+                        confirmPasswordInput.setCustomValidity('');
+                      } else {
+                        passwordError.textContent = 'Passwords do not match';
+                        confirmPasswordInput.setCustomValidity('Passwords do not match');
+                      }
+                    });
+                  </script>
+                  <br>
+            <label>Depaertment : </label>
+            <input type="text" placeholder="Applicant Dept" id="dept"><br><br>
+            <label for="course">Select a Course : </label>
+            <select id="course" name="course">
+			<option value="html">HTML</option>
+			<option value="c">C</option>
+            <option value="c++">C++</option>
+			<option value="java">JAVA</option>
+            <option value="python">Python</option>
+            <option value="swift">Swift</option>
+            <option value="kotlin">Kotlin</option>
+		</select><br><br>
+            <label>D.O.B : </label>
+            <input type="date" id="date"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
