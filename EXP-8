@@ -1,0 +1,71 @@
+<!-- html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>  
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator using Node.js</h1>
+        <form action="http://localhost:8060/login"  method="get">
+            <label for="num1">Number 1:</label>
+            <input type="number" name="num1" id="num1" required><br><br>
+            <label for="num2">Number 2:</label>
+            <input type="number" name="num2" id="num2" required><br><br>
+            <label for="operator">Operator:</label>
+            <select name="operator" id="operator" required>
+                <option value="">Choose an operator</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br><br>
+            <input type="submit" value="Calculate">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>
+
+
+//javascript
+http = require('http');
+url = require('url');
+querystring = require('querystring');
+
+function onRequest(request, response) {
+    var path = url.parse(request.url).pathname;
+    console.log('Request for ' + path + 'received.');
+    var query = url.parse(request.url).query;
+    console.log(query);
+    var num1 = querystring.parse(query)["num1"];
+    var num2 = querystring.parse(query)["num2"];
+    var op = querystring.parse(query)["operator"];
+    var ans;
+    if(op=='+')
+    {
+        ans=num1+num2;
+        response.write('The Answer is ' + ans);
+    }
+    else if(op=='-')
+    {
+        ans=num1-num2;
+        response.write('The Answer is ' + ans);
+
+    }
+    else if(op=='*')
+    {
+        ans=num1*num2;
+        response.write('The Answer is ' + ans);
+    }
+    else{
+        ans=num1/num2;
+        response.write('The Answer is ' + ans);
+    }
+
+     response.end();
+
+}
+
+http.createServer(onRequest).listen(8060);
+console.log('Server started..');
